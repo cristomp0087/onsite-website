@@ -1,0 +1,83 @@
+/* ============================================
+   ONSITE CLUB — DESIGN TOKENS
+   Brand Guide: Pride. Belonging. Built.
+   ============================================ */
+
+:root {
+  /* ─────────────────────────────────────────
+     CORES PRIMÁRIAS (Brand Guide)
+     ───────────────────────────────────────── */
+  --onsite-amber: #F7B324;      /* Amarelo obra — accent principal */
+  --onsite-amber-dark: #D49A00; /* Hover states */
+  --onsite-black: #1A1A1A;      /* Preto principal */
+  --onsite-white: #FFFFFF;      /* Branco puro */
+  --onsite-graphite: #3D3D3D;   /* Cinza escuro — texto secundário */
+
+  /* ─────────────────────────────────────────
+     BACKGROUNDS
+     ───────────────────────────────────────── */
+  --bg-dark: #101215;           /* Fundo principal */
+  --bg-dark-alt: #181B20;       /* Fundo cards/painéis */
+  --bg-light: #F5F5F5;          /* Fundo claro (se precisar) */
+  --card-bg: #1E2127;           /* Cards elevados */
+
+  /* ─────────────────────────────────────────
+     TEXTO
+     ───────────────────────────────────────── */
+  --text-main: #FDFDFD;         /* Texto principal (quase branco) */
+  --text-muted: #A0A4AC;        /* Texto secundário */
+  --text-accent: var(--onsite-amber);
+
+  /* ─────────────────────────────────────────
+     BORDAS E DIVISORES
+     ───────────────────────────────────────── */
+  --border-subtle: #2A2E35;     /* Bordas sutis */
+  --border-accent: var(--onsite-amber);
+
+  /* ─────────────────────────────────────────
+     FEEDBACK
+     ───────────────────────────────────────── */
+  --success: #34D399;
+  --warning: var(--onsite-amber);
+  --error: #EF4444;
+
+  /* ─────────────────────────────────────────
+     LAYOUT
+     ───────────────────────────────────────── */
+  --max-width: 1200px;
+  --max-width-wide: 1400px;
+  --edge-padding: clamp(16px, 4vw, 32px);
+
+  /* ─────────────────────────────────────────
+     TIPOGRAFIA
+     ───────────────────────────────────────── */
+  --font-main: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+
+  /* ─────────────────────────────────────────
+     ANIMAÇÕES
+     ───────────────────────────────────────── */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* ─────────────────────────────────────────
+     SOMBRAS
+     ───────────────────────────────────────── */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 20px rgba(247, 179, 36, 0.3);
+
+  /* ─────────────────────────────────────────
+     BORDER RADIUS
+     ───────────────────────────────────────── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+}

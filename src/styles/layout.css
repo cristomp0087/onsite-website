@@ -1,0 +1,138 @@
+/* ============================================
+   ONSITE CLUB — LAYOUT
+   Container, grid, seções
+   ============================================ */
+
+/* ─────────────────────────────────────────
+   CONTAINER
+   ───────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--edge-padding);
+}
+
+.container--wide {
+  max-width: var(--max-width-wide);
+}
+
+/* ─────────────────────────────────────────
+   SEÇÕES
+   ───────────────────────────────────────── */
+section {
+  position: relative;
+  scroll-margin-top: 80px; /* Compensa header fixo */
+}
+
+/* Seção full-height (para hero, etc) */
+.section--full {
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport para mobile */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Seção padrão com padding */
+.section {
+  padding: clamp(48px, 8vw, 96px) 0;
+}
+
+/* ─────────────────────────────────────────
+   HEADER DE SEÇÃO
+   ───────────────────────────────────────── */
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-kicker {
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--onsite-amber);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: var(--font-weight-black);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Título com logo inline */
+.section-title--with-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.section-title__logo {
+  height: 2rem;
+  width: auto;
+}
+
+.section-subtitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 50ch;
+}
+
+/* ─────────────────────────────────────────
+   BACKGROUNDS TEMÁTICOS
+   ───────────────────────────────────────── */
+
+/* Spotlight central */
+.bg-spotlight {
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(
+    circle at center,
+    #1C2026 0%,
+    var(--bg-dark) 70%
+  );
+}
+
+/* Luz de cima */
+.bg-overhead {
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(
+    circle at 50% 0%,
+    #252A33 0%,
+    var(--bg-dark) 60%
+  );
+}
+
+/* Textura noise (sutil) */
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ─────────────────────────────────────────
+   UTILITIES
+   ───────────────────────────────────────── */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: 0.5rem; }
+.gap-2 { gap: 1rem; }
+.gap-3 { gap: 1.5rem; }
+.gap-4 { gap: 2rem; }
+
+.grid { display: grid; }

@@ -1,0 +1,112 @@
+<!-- /src/sections/contact.html -->
+<section id="contact" class="contact section">
+  <div class="container">
+
+    <div class="contact-card">
+      
+      <!-- Lado esquerdo: Copy + Visual -->
+      <div class="contact-copy">
+        <h2 class="contact-title section-title--with-logo">
+          <span>Join the</span>
+          <img 
+            src="./src/assets/images/logo-onsite-club-02.png" 
+            alt="OnSite" 
+            class="section-title__logo"
+          >
+          <span>Club</span>
+        </h2>
+
+        <p class="contact-text">
+          One simple form to <strong>join the club</strong>, ask a question, or send feedback.
+          No spam — just drops, tools, and news for people who actually build.
+        </p>
+
+        <div class="contact-visual">
+          <img 
+            src="./src/assets/images/contact-worker-phone.png" 
+            alt="Construction worker checking phone"
+            loading="lazy"
+          >
+        </div>
+      </div>
+
+      <!-- Lado direito: Formulário -->
+      <form class="contact-form" id="contactForm">
+        <div class="contact-fields">
+          
+          <div class="field">
+            <label for="contactName">Name</label>
+            <input 
+              type="text" 
+              id="contactName" 
+              name="name"
+              placeholder="Your name" 
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="contactEmail">Email</label>
+            <input 
+              type="email" 
+              id="contactEmail" 
+              name="email"
+              placeholder="you@example.com" 
+              required
+            >
+          </div>
+
+          <div class="field field-full">
+            <label for="contactTrade">Trade (optional)</label>
+            <input 
+              type="text" 
+              id="contactTrade" 
+              name="trade"
+              placeholder="Framing, drywall, HVAC..."
+            >
+          </div>
+
+          <div class="field">
+            <label for="contactBadge">Experience Level</label>
+            <select id="contactBadge" name="badge">
+              <option value="">Select your level</option>
+              <option value="rookie">Rookie — Learning the ropes</option>
+              <option value="crew">Crew — Solid on the tools</option>
+              <option value="lead">Lead — Running the job</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="contactPhone">Phone (optional)</label>
+            <input 
+              type="tel" 
+              id="contactPhone" 
+              name="phone"
+              placeholder="(Optional)"
+            >
+          </div>
+
+          <div class="field field-full">
+            <label for="contactMessage">Message (optional)</label>
+            <textarea 
+              id="contactMessage" 
+              name="message"
+              placeholder="Tell us your trade, crew, or question."
+            ></textarea>
+          </div>
+          
+        </div>
+
+        <button type="submit" class="btn btn-primary contact-submit">
+          Join the Club
+        </button>
+
+        <p class="contact-small">
+          We won't flood you with spam or random texts. Promise.
+        </p>
+      </form>
+      
+    </div>
+
+  </div>
+</section>

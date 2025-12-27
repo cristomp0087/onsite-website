@@ -1,0 +1,296 @@
+/* ============================================
+   ONSITE CLUB — CLUBROOM
+   Página interna do clube
+   ============================================ */
+
+/* ─────────────────────────────────────────
+   INTRO / HEADER DO CLUBROOM
+   ───────────────────────────────────────── */
+.clubroom-intro {
+  text-align: center;
+  padding: 4rem 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.clubroom-kicker {
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--onsite-amber);
+  margin-bottom: 1rem;
+}
+
+.clubroom-headline {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: var(--font-weight-black);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.clubroom-accent {
+  color: var(--onsite-amber);
+}
+
+.clubroom-subhead {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.clubroom-scrollhint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  animation: bounce 2s infinite;
+}
+
+.clubroom-scrollicon {
+  font-size: 1.5rem;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* ─────────────────────────────────────────
+   CHAPTERS (seções do clubroom)
+   ───────────────────────────────────────── */
+.clubroom-chapter {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.clubroom-chapter--split {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .clubroom-chapter--split {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  
+  .clubroom-chapter--reverse .clubroom-media {
+    order: 2;
+  }
+}
+
+/* Media */
+.clubroom-media {
+  position: relative;
+}
+
+.clubroom-media-img {
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.clubroom-media-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(8px);
+}
+
+.clubroom-badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--onsite-amber);
+  color: var(--onsite-black);
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Content */
+.clubroom-content {
+  max-width: 480px;
+}
+
+.clubroom-title {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-black);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.clubroom-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.clubroom-bullets {
+  margin-bottom: 1.5rem;
+}
+
+.clubroom-bullets li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.clubroom-bullets li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--onsite-amber);
+  font-weight: bold;
+}
+
+.clubroom-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ─────────────────────────────────────────
+   FOLDS (dobras que expandem)
+   ───────────────────────────────────────── */
+.fold {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: 
+    max-height var(--transition-slow),
+    opacity var(--transition-base),
+    padding var(--transition-base);
+}
+
+.fold.is-open {
+  max-height: 2000px; /* valor grande o suficiente */
+  opacity: 1;
+  padding: 1.5rem 0;
+}
+
+.fold-inner {
+  background: var(--bg-dark-alt);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  padding: 1.5rem;
+}
+
+.fold-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.fold-title {
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.fold-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--border-subtle);
+  color: var(--text-main);
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  transition: all var(--transition-fast);
+}
+
+.fold-close:hover {
+  background: var(--onsite-amber);
+  color: var(--onsite-black);
+}
+
+.fold-content {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.fold-content a {
+  color: var(--onsite-amber);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.fold-content a:hover {
+  color: var(--text-main);
+}
+
+/* Lista de links na fold */
+.fold-links {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.fold-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background: var(--bg-dark);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.fold-link:hover {
+  border-color: var(--onsite-amber);
+  transform: translateX(4px);
+}
+
+.fold-link__icon {
+  font-size: 1.25rem;
+}
+
+.fold-link__text {
+  flex: 1;
+}
+
+.fold-link__title {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-main);
+  margin-bottom: 0.125rem;
+}
+
+.fold-link__desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.fold-link__arrow {
+  color: var(--text-muted);
+  transition: transform var(--transition-fast);
+}
+
+.fold-link:hover .fold-link__arrow {
+  transform: translateX(4px);
+  color: var(--onsite-amber);
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Clubroom – OnSite Club</title>
+  <meta name="description" content="Inside the OnSite Club. Jobsite culture, tools, pathways and perks — in one place.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="./src/styles/tokens.css">
+  <link rel="stylesheet" href="./src/styles/base.css">
+  <link rel="stylesheet" href="./src/styles/layout.css">
+  <link rel="stylesheet" href="./src/styles/components.css">
+  <link rel="stylesheet" href="./src/styles/sections.css">
+  <link rel="stylesheet" href="./src/styles/clubroom.css">
+</head>
+
+<body class="clubroom-page">
+  
+  <!-- Header -->
+  <div data-include="./src/components/header.html"></div>
+
+  <main id="top">
+    
+    <section id="clubroom" class="section">
+      <div class="container">
+
+        <!-- INTRO -->
+        <header class="clubroom-intro">
+          <p class="clubroom-kicker">Inside the Club</p>
+          <h1 class="clubroom-headline">
+            The jobsite has a language<br>
+            <span class="clubroom-accent">We built a home for it</span>
+          </h1>
+          <p class="clubroom-subhead">
+            Jobsite culture, tools, pathways and perks — in one place.<br>
+            No noise. Just things that work.
+          </p>
+          <div class="clubroom-scrollhint" aria-hidden="true">
+            <span class="clubroom-scrollicon">↓</span>
+            <span class="clubroom-scrolltext">Keep scrolling</span>
+          </div>
+        </header>
+
+        <!-- CHAPTER 1: WEAR -->
+        <article class="clubroom-chapter clubroom-chapter--split">
+          <figure class="clubroom-media">
+            <img src="./src/assets/images/club-pride-trade.png" alt="OnSite apparel" class="clubroom-media-img" loading="lazy">
+            <div class="clubroom-media-tag">
+              <span class="clubroom-tag-icon">⚡</span>
+              <span class="clubroom-tag-text">Latest Drop</span>
+            </div>
+          </figure>
+
+          <div class="clubroom-content">
+            <h2 class="clubroom-title">Wear What You Do</h2>
+            <p class="clubroom-text">
+              The unofficial uniform. Drops that represent your trade — on and off the clock.
+            </p>
+            <div class="clubroom-ctas">
+              <a class="btn btn-primary" href="https://onsite-9957.myshopify.com" target="_blank" rel="noopener">Shop the Badge</a>
+              <button class="btn btn-outline" type="button" data-fold-trigger="fold-drops" aria-expanded="false">See Drops</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- FOLD: Drops -->
+        <div class="fold" id="fold-drops">
+          <div class="fold-inner">
+            <header class="fold-header">
+              <h3 class="fold-title">Latest Drops</h3>
+              <button class="fold-close" type="button" data-fold-close aria-label="Close">×</button>
+            </header>
+            <div class="fold-content">
+              <p>New gear drops every month. Premium quality, jobsite-tested.</p>
+              <div class="fold-links">
+                <a class="fold-link" href="https://onsite-9957.myshopify.com/collections/onsite-men" target="_blank" rel="noopener">
+                  <span class="fold-link__icon">👔</span>
+                  <div class="fold-link__text">
+                    <div class="fold-link__title">Men's Collection</div>
+                    <div class="fold-link__desc">Tees, hoodies, hats</div>
+                  </div>
+                  <span class="fold-link__arrow">→</span>
+                </a>
+                <a class="fold-link" href="https://onsite-9957.myshopify.com/collections/onsite-women" target="_blank" rel="noopener">
+                  <span class="fold-link__icon">👕</span>
+                  <div class="fold-link__text">
+                    <div class="fold-link__title">Women's Collection</div>
+                    <div class="fold-link__desc">Fitted tees, crews</div>
+                  </div>
+                  <span class="fold-link__arrow">→</span>
+                </a>
+                <a class="fold-link" href="https://onsite-9957.myshopify.com/collections/onsite-members" target="_blank" rel="noopener">
+                  <span class="fold-link__icon">⭐</span>
+                  <div class="fold-link__text">
+                    <div class="fold-link__title">Members Only</div>
+                    <div class="fold-link__desc">Exclusive drops for club members</div>
+                  </div>
+                  <span class="fold-link__arrow">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 2: TOOLS -->
+        <article class="clubroom-chapter clubroom-chapter--split clubroom-chapter--reverse">
+          <figure class="clubroom-media">
+            <img src="./src/assets/images/icon-calculator-gold.png" alt="Calculator icon" class="clubroom-media-img" loading="lazy" style="max-width: 200px;">
+          </figure>
+
+          <div class="clubroom-content">
+            <h2 class="clubroom-title">Hold My Tape</h2>
+            <p class="clubroom-text">
+              Quick conversions and clean calculators — built for execution mode.
+            </p>
+            <ul class="clubroom-bullets">
+              <li>Converters that don't waste time</li>
+              <li>Material calculators</li>
+              <li>Saved shortcuts</li>
+            </ul>
+            <div class="clubroom-ctas">
+              <a class="btn btn-primary" href="./index.html#tools">Open Tools</a>
+              <button class="btn btn-outline" type="button" data-fold-trigger="fold-tools" aria-expanded="false">All Tools</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- FOLD: Tools -->
+        <div class="fold" id="fold-tools">
+          <div class="fold-inner">
+            <header class="fold-header">
+              <h3 class="fold-title">OnSite Tools</h3>
+              <button class="fold-close" type="button" data-fold-close aria-label="Close">×</button>
+            </header>
+            <div class="fold-content">
+              <p>Digital tools built for the jobsite. Fast, simple, no BS.</p>
+              <div class="fold-links">
+                <a class="fold-link" href="https://onsite-calculator.vercel.app/" target="_blank" rel="noopener">
+                  <span class="fold-link__icon">🧮</span>
+                  <div class="fold-link__text">
+                    <div class="fold-link__title">Voice Inch Calculator</div>
+                    <div class="fold-link__desc">Add and convert measurements by speaking</div>
+                  </div>
+                  <span class="fold-link__arrow">→</span>
+                </a>
+                <a class="fold-link" href="https://onsite-flow.vercel.app/" target="_blank" rel="noopener">
+                  <span class="fold-link__icon">⏱️</span>
+                  <div class="fold-link__text">
+                    <div class="fold-link__title">Hour Tracker</div>
+                    <div class="fold-link__desc">Log hours per job</div>
+                  </div>
+                  <span class="fold-link__arrow">→</span>
+                </a>
+                <div class="fold-link" style="opacity: 0.5; cursor: default;">
+                  <span class="fold-link__icon">📋</span>
+                  <div class="fold-link__text">
+                    <div class="fold-link__title">Job Checklist</div>
+                    <div class="fold-link__desc">Coming soon</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 3: PATHWAYS -->
+        <article class="clubroom-chapter clubroom-chapter--split">
+          <figure class="clubroom-media">
+            <img src="./src/assets/images/icon-checklist-gold.png" alt="Pathways icon" class="clubroom-media-img" loading="lazy" style="max-width: 200px;">
+          </figure>
+
+          <div class="clubroom-content">
+            <h2 class="clubroom-title">Jobsite Pathways</h2>
+            <p class="clubroom-text">
+              Steps, tickets, required courses and useful links — laid out, bookmarkable, no hunting.
+            </p>
+            <div class="clubroom-ctas">
+              <button class="btn btn-primary" type="button" data-fold-trigger="fold-pathways" aria-expanded="false">View Pathways</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- FOLD: Pathways -->
+        <div class="fold" id="fold-pathways">
+          <div class="fold-inner">
+            <header class="fold-header">
+              <h3 class="fold-title">Trade Pathways</h3>
+              <button class="fold-close" type="button" data-fold-close aria-label="Close">×</button>
+            </header>
+            <div class="fold-content">
+              <p>Essential certifications and steps for each trade. Canada-focused, always updated.</p>
+              <div class="fold-links">
+                <a class="fold-link" href="#">
+                  <span class="fold-link__icon">🔨</span>
+                  <div class="fold-link__text">
+                    <div class="fold-link__title">Framing Carpenter</div>
+                    <div class="fold-link__desc">Red Seal pathway, apprenticeship steps</div>
+                  </div>
+                  <span class="fold-link__arrow">→</span>
+                </a>
+                <a class="fold-link" href="#">
+                  <span class="fold-link__icon">⚡</span>
+                  <div class="fold-link__text">
+                    <div class="fold-link__title">Electrician</div>
+                    <div class="fold-link__desc">Licensing, safety certs</div>
+                  </div>
+                  <span class="fold-link__arrow">→</span>
+                </a>
+                <a class="fold-link" href="#">
+                  <span class="fold-link__icon">🔧</span>
+                  <div class="fold-link__text">
+                    <div class="fold-link__title">Plumber</div>
+                    <div class="fold-link__desc">Trade school, journeyman path</div>
+                  </div>
+                  <span class="fold-link__arrow">→</span>
+                </a>
+                <a class="fold-link" href="#">
+                  <span class="fold-link__icon">❄️</span>
+                  <div class="fold-link__text">
+                    <div class="fold-link__title">HVAC Technician</div>
+                    <div class="fold-link__desc">Refrigeration, gas fitting</div>
+                  </div>
+                  <span class="fold-link__arrow">→</span>
+                </a>
+              </div>
+              <p style="margin-top: 1rem; font-size: 0.85rem;">
+                <em>More trades coming soon. <a href="./index.html#contact">Request yours</a>.</em>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAPTER 4: LOCKER -->
+        <article class="clubroom-chapter clubroom-chapter--split clubroom-chapter--reverse">
+          <figure class="clubroom-media">
+            <img src="./src/assets/images/club-level-badge.png" alt="Member badge" class="clubroom-media-img" loading="lazy">
+            <span class="clubroom-badge">Members Area (Beta)</span>
+          </figure>
+
+          <div class="clubroom-content">
+            <h2 class="clubroom-title">Virtual Locker</h2>
+            <p class="clubroom-text">
+              Saved tools, started courses, shop history, badges — and your Blades balance.
+            </p>
+            <div class="clubroom-ctas">
+              <a class="btn btn-primary" href="./member/index.html">Open My Locker</a>
+              <a class="btn btn-outline" href="./index.html#contact">Create Profile</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div data-include="./src/components/footer.html"></div>
+  
+  <!-- Blades Popup -->
+  <div data-include="./src/components/blades-popup.html"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="./src/js/main.js"></script>
+  
+</body>
+</html>

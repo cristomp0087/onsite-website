@@ -1,0 +1,122 @@
+/* ============================================
+   ONSITE CLUB — BASE STYLES
+   Reset + defaults HTML
+   ============================================ */
+
+/* ─────────────────────────────────────────
+   RESET
+   ───────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────────────────
+   DOCUMENTO
+   ───────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-main);
+  font-weight: var(--font-weight-normal);
+  background: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ─────────────────────────────────────────
+   MÍDIA
+   ───────────────────────────────────────── */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─────────────────────────────────────────
+   TIPOGRAFIA
+   ───────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-black);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ─────────────────────────────────────────
+   LISTAS
+   ───────────────────────────────────────── */
+ul, ol {
+  list-style: none;
+}
+
+/* ─────────────────────────────────────────
+   FORMS
+   ───────────────────────────────────────── */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* ─────────────────────────────────────────
+   ACESSIBILIDADE
+   ───────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--onsite-amber);
+  outline-offset: 2px;
+}
+
+/* Remove outline padrão quando não é keyboard */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─────────────────────────────────────────
+   SELECTION
+   ───────────────────────────────────────── */
+::selection {
+  background: var(--onsite-amber);
+  color: var(--onsite-black);
+}

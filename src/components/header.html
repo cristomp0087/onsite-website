@@ -1,0 +1,32 @@
+<!-- /src/components/header.html -->
+<header class="site-header">
+  <div class="container header-inner">
+    
+    <a href="./index.html" class="logo" aria-label="OnSite Club - Home">
+      <img src="./src/assets/images/logo-onsite-club-02.png" alt="OnSite Club">
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="./index.html">Home</a>
+      <a href="https://onsite-9957.myshopify.com" target="_blank" rel="noopener">Shop</a>
+      <a href="./index.html#tools">Tools</a>
+      <a href="./clubroom.html">Clubroom</a>
+      <a href="./member/index.html" class="nav-cta" id="navMemberLink">
+        <span id="navMemberText">My Locker</span>
+      </a>
+    </nav>
+    
+  </div>
+</header>
+
+<script>
+  // Check if logged in and update nav
+  (function() {
+    const token = localStorage.getItem('onsite_customer_token');
+    const text = document.getElementById('navMemberText');
+    if (!token && text) {
+      text.textContent = 'Login';
+      document.getElementById('navMemberLink').href = './member/login.html';
+    }
+  })();
+</script>
