@@ -1,5 +1,5 @@
 // /src/js/services/shopify.js
-// Shopify Storefront API integration
+// Shopify Storefront API - Cart only (auth handled by Hub)
 
 // ─────────────────────────────────────────
 // CONFIG
@@ -37,7 +37,7 @@ async function shopifyFetch(query, variables = {}) {
 }
 
 // ─────────────────────────────────────────
-// PRODUCT QUERIES
+// PRODUCTS
 // ─────────────────────────────────────────
 const PRODUCT_FIELDS = `
   id
@@ -143,85 +143,8 @@ export async function addToCart(cartId, lines) {
 }
 
 // ─────────────────────────────────────────
-// CUSTOMER
+// HELPERS
 // ─────────────────────────────────────────
-export async function customerCreate({ firstName, lastName, email, password }) {
-  const query = `
-    mutation customerCreate($input: CustomerCreateInput!) {
-      customerCreate(input: $input) {
-        customer {
-          id
-          firstName
-          lastName
-          email
-        }
-        customerUserErrors {
-          code
-          field
-          message
-        }
-      }
-    }
-  `;
-  
-  const data = await shopifyFetch(query, { 
-    input: { firstName, lastName, email, password } 
-  });
-  
-  const error = data?.customerCreate?.customerUserErrors?.[0]?.message;
-  if (error) throw new Error(error);
-  
-  return data.customerCreate.customer;
-}
-
-export async function customerLogin(email, password) {
-  const query = `
-    mutation customerAccessTokenCreate($input: CustomerAccessTokenCreateInput!) {
-      customerAccessTokenCreate(input: $input) {
-        customerAccessToken {
-          accessToken
-          expiresAt
-        }
-        customerUserErrors {
-          code
-          message
-        }
-      }
-    }
-  `;
-  
-  const data = await shopifyFetch(query, { 
-    input: { email, password } 
-  });
-  
-  const error = data?.customerAccessTokenCreate?.customerUserErrors?.[0]?.message;
-  if (error) throw new Error(error);
-  
-  return data.customerAccessTokenCreate.customerAccessToken;
-}
-
-export async function getCustomer(accessToken) {
-  const query = `
-    query {
-      customer(customerAccessToken: "${accessToken}") {
-        id
-        firstName
-        lastName
-        email
-        orders(first: 10) {
-          edges {
-            node {
-              id
-              orderNumber
-              totalPrice { amount currencyCode }
-              processedAt
-            }
-          }
-        }
-      }
-    }
-  `;
-  
-  const data = await shopifyFetch(query);
-  return data?.customer;
+export function getShopUrl() {
+  return `https://${CONFIG.domain}`;
 }

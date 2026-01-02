@@ -464,6 +464,23 @@
   color: var(--text-muted);
 }
 
+/* Contact card simple (centered) */
+.contact-card--simple {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact-card--simple .contact-fields {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 640px) {
+  .contact-card--simple .contact-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (min-width: 900px) {
   .contact-card {
     grid-template-columns: 1fr 1.3fr;

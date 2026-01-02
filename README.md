@@ -1,137 +1,104 @@
-# OnSite Club v2.0
+# OnSite Club — Website
 
 > Premium jobsite culture, essential tools, and a club for people who actually build.
 
-## 🏗️ Project Structure
+## 🏗️ Arquitetura
+
+Este é o **site principal** do OnSite Club. Faz parte de um ecossistema maior:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  onsite.ca (Este repo - Site + E-commerce link)                 │
+│  - Landing page                                                 │
+│  - Clubroom (explicação do ecossistema)                         │
+│  - Shop preview → Shopify                                       │
+│  - Contact form                                                 │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│  app.onsite.ca (Hub Central)                                    │
+│  - Login único (SSO) via Supabase                               │
+│  - Dashboard com cards dos apps                                 │
+│  - Gerenciamento de conta, subscription, perfil                 │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        ▼                     ▼                     ▼
+   Timekeeper            Calculator              Shop
+   (Mobile App)          (Web/Mobile)          (Shopify)
+```
+
+## 📁 Estrutura
 
 ```
 onsite-club/
 ├── index.html              # Home page
-├── clubroom.html           # Club hub with folds
-├── member/
-│   └── index.html          # Member area (placeholder)
+├── clubroom.html           # Explicação do ecossistema (com folds)
 ├── src/
-│   ├── assets/
-│   │   └── images/         # All images
+│   ├── assets/images/      # Imagens
 │   ├── components/
-│   │   ├── header.html     # Site header/nav
-│   │   ├── footer.html     # Site footer
-│   │   └── blades-popup.html # Loyalty points popup
+│   │   ├── header.html     # Nav: Home, Shop, Clubroom, Member Area
+│   │   ├── footer.html     
+│   │   └── blades-popup.html
 │   ├── sections/
-│   │   ├── hero.html       # Hero section
-│   │   ├── shop-preview.html # Shop categories
-│   │   ├── tools.html      # Digital tools
-│   │   ├── social-hubs.html # Social links
-│   │   └── contact.html    # Contact/join form
+│   │   ├── hero.html       
+│   │   ├── shop-preview.html
+│   │   ├── social-hubs.html
+│   │   └── contact.html    # Fale conosco simples
 │   ├── styles/
-│   │   ├── tokens.css      # Design tokens (colors, fonts)
-│   │   ├── base.css        # Reset + defaults
-│   │   ├── layout.css      # Grid, container, utilities
-│   │   ├── components.css  # Header, footer, buttons
-│   │   ├── sections.css    # All section styles
-│   │   └── clubroom.css    # Clubroom-specific
+│   │   ├── tokens.css      # Design tokens
+│   │   ├── base.css        # Reset
+│   │   ├── layout.css      
+│   │   ├── components.css  
+│   │   ├── sections.css    
+│   │   └── clubroom.css    
 │   └── js/
-│       ├── main.js         # Entry point
+│       ├── main.js         
 │       ├── services/
-│       │   ├── includes.js # HTML include system
-│       │   └── shopify.js  # Shopify API integration
+│       │   ├── includes.js 
+│       │   └── shopify.js  # Apenas carrinho
 │       └── ui/
-│           ├── nav.js      # Navigation & scroll
-│           ├── blades.js   # Loyalty popup
-│           └── folds.js    # Expandable sections
+│           ├── nav.js      
+│           ├── blades.js   
+│           └── folds.js    
 └── README.md
 ```
 
-## 🎨 Brand Guide
+## 🔗 Links Importantes
 
-### Colors
-| Name | Hex | Usage |
-|------|-----|-------|
-| OnSite Amber | `#F7B324` | Primary accent, CTAs |
-| OnSite Black | `#1A1A1A` | Text, backgrounds |
-| OnSite White | `#FFFFFF` | Text on dark |
-| Graphite | `#3D3D3D` | Secondary text |
+| Destino | URL |
+|---------|-----|
+| Shop (Shopify) | https://onsite-9957.myshopify.com |
+| Member Area (Hub) | https://app.onsite.ca |
+| Contact Email | contact@shabba.ca |
 
-### Typography
+## 🎨 Brand
+
+- **Amarelo:** #F7B324
+- **Preto:** #1A1A1A
+- **Grafite:** #3D3D3D
 - **Font:** Montserrat
-- **Weights:** 400 (normal), 500 (medium), 700 (bold), 800 (black)
 
-## 🔧 How It Works
+## 🚀 Deploy
 
-### Include System
-Components are loaded via `data-include` attribute:
-```html
-<div data-include="./src/components/header.html"></div>
-```
+Site estático. Deploy em GitHub Pages ou Vercel.
 
-### Folds System (Clubroom)
-Expandable sections triggered by buttons:
-```html
-<button data-fold-trigger="fold-drops">See Drops</button>
-<div class="fold" id="fold-drops">...</div>
-```
-
-### Shopify Integration
-Connected to `onsite-9957.myshopify.com` via Storefront API.
-
-## 🚀 Deployment
-
-### GitHub Pages
-1. Push to `main` branch
-2. Enable Pages in repo settings
-3. Set source to `/ (root)`
-
-### Vercel
-1. Connect repo
-2. Framework: None (static)
-3. Build: None required
-
-### Important
-All paths use `./` (relative), so deployment should work anywhere.
-
-## 📋 TODO
-
-### Phase 2: Clubroom Enhancement
-- [ ] Complete pathway content
-- [ ] Add more fold sections
-- [ ] Implement fold animations
-
-### Phase 3: Authentication
-- [ ] Shopify Customer Login
-- [ ] Member profile page
-- [ ] Protected routes
-
-### Phase 4: Blades System
-- [ ] Connect to Shopify metafields
-- [ ] Earn rules (purchases)
-- [ ] Redeem flow
-
-## 🛠️ Development
-
-### Local Development
-Use any static server:
 ```bash
-# Python
-python -m http.server 8000
-
-# Node (npx)
+# Local dev
 npx serve
 
-# VS Code Live Server extension
+# ou Python
+python -m http.server 8000
 ```
 
-### File Editing
-- CSS is modular: edit the relevant file in `/src/styles/`
-- Sections are separate: edit in `/src/sections/`
-- Components are reusable: edit in `/src/components/`
+## 📝 Notas
 
-## 📝 Notes
-
-- No build step required (vanilla HTML/CSS/JS)
-- ES Modules used (`type="module"`)
-- Mobile-first responsive design
-- WCAG accessibility basics included
+- **Auth**: Não tem login no site. Member Area redireciona pro Hub.
+- **Shop**: Abre Shopify direto (sem fricção).
+- **Blades**: Sistema de pontos gerenciado pelo Hub.
+- **Folds**: Sistema de "dobras" no Clubroom que expandem conteúdo.
 
 ---
 
-Built with 🏗️ by OnSite Club
+Built with 🏗️ for OnSite Club
