@@ -17,7 +17,7 @@ Este é o **site principal** do OnSite Club. Faz parte de um ecossistema maior:
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│  app.onsite.ca (Hub Central)                                    │
+│  app.onsiteclub.ca (Hub Central)                                    │
 │  - Login único (SSO) via Supabase                               │
 │  - Dashboard com cards dos apps                                 │
 │  - Gerenciamento de conta, subscription, perfil                 │
@@ -70,7 +70,7 @@ onsite-club/
 | Destino | URL |
 |---------|-----|
 | Shop (Shopify) | https://onsite-9957.myshopify.com |
-| Member Area (Hub) | https://app.onsite.ca |
+| Member Area (Hub) | https://app.onsiteclub.ca |
 | Contact Email | contact@shabba.ca |
 
 ## 🎨 Brand
